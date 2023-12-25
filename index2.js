@@ -13,8 +13,8 @@ const contractAddress = '0xF8B1378579659D8F7EE5f3C929c2f3E332E41Fd6'; // (Contra
 web3.eth.getBlockNumber().then(async (latestBlock) => {
     let interactingAddresses = new Set();
 
-    const startBlock = 18306934;
-    const endBlock = 18839027;
+    const startBlock = 18860507;
+    const endBlock = 18861007;
     for (let i = startBlock; i <= endBlock; i++) {
         let block = await web3.eth.getBlock(i, true);
 
@@ -26,7 +26,7 @@ web3.eth.getBlockNumber().then(async (latestBlock) => {
     }
 
     const addressesArray = [...interactingAddresses];
-    const outputFilePath = 'Scroll_Bridge_addresses.txt';
+    const outputFilePath = 'Scroll_Bridge_addresses_2.txt';
 
     fs.writeFile(outputFilePath, addressesArray.join('\n'), (err) => {
         if (err) {
