@@ -11,6 +11,10 @@ web3.eth.getBlockNumber().then(async (latestBlock) => {
 
     const startBlock = 18306934;
     const endBlock = 18839027;
+
+    console.log('Đang quét địa chỉ ví.....');
+
+
     for (let i = startBlock; i <= endBlock; i++) {
         let block = await web3.eth.getBlock(i, true);
 
@@ -29,7 +33,7 @@ web3.eth.getBlockNumber().then(async (latestBlock) => {
             console.error('Lỗi khi ghi file:', err);
             return;
         }
-        console.log([...interactingAddresses]);
-        console.log(`Đã lưu danh sách các địa chỉ ví vào file ${outputFilePath}`);
+        // console.log([...interactingAddresses]);
+        console.log(`Done!!!🎉🎉🎉Đã lưu danh sách các địa chỉ ví vào file ${outputFilePath}`);
     });
 });
